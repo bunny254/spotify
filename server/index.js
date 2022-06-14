@@ -27,8 +27,8 @@ app.use(express.json());
 app.get('/', (req, res)=>{
     res.json("Welcome to the home page")
 })
-app.use('/api/users', userRoutes);
-app.use('/api/login', authRoutes);
+app.use('/api/auth/users', userRoutes);
+app.use('/api/auth/login', authRoutes);
 app.use('/api/playlists', playlistRoutes);
 
 start()

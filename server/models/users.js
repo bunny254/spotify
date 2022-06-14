@@ -52,7 +52,7 @@ userSchema.methods.generateAuthToken = function () {
     { _id: this._id, name: this.name, isAdmin: this.isAdmin },
     process.env.JWTPRIVATEKEY,
     {
-      expiresIn: "1d",
+      expiresIn: "2d",
     }
   );
   return token;
@@ -70,6 +70,6 @@ const validate = (user) => {
   return schema.validate(user);
 };
 
-const User = mongoose.Model("user", userSchema);
+const User = mongoose.model("user", userSchema);
 
 module.exports = { User, validate };

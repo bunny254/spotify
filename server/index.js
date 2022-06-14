@@ -4,6 +4,9 @@ const express=require('express');
 const cors=require('cors');
 const db=require('./db/db');
 const userRoutes=require('./routes/users');
+const authRoutes=require('./routes/auth');
+const songRoutes=require('./routes/songs');
+const playlistRoutes=require('./routes/playlist')
 const app=express()
 const port=3500;
 
@@ -24,6 +27,8 @@ app.use(express.json());
 app.get('/', (req, res)=>{
     res.json("Welcome to the home page")
 })
-app.use('/api/users', userRoutes)
+app.use('/api/users', userRoutes);
+app.use('/api/login', authRoutes);
+app.use('/api/playlists', playlistRoutes);
 
 start()

@@ -122,7 +122,7 @@ router.delete('/:id', [validObjectId, auth], async(req,res)=>{
     if(!user._id.equals(playlist.user))
         return res.status(403).send({message:"Denined access privillage to delete"})
     
-    const index= User.playlists.indexOf(req.params.id);
+    const index= user.playlists.indexOf(req.params.id);
     user.playlists.splice(index, 1);
     await user.save();
     await playlist.remove();

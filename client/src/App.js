@@ -1,9 +1,14 @@
-import './App.css';
+import './index.css';
+import NavBar from './components/navBar';
+import Home from './components/home';
+import Footer from './components/footer';
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello Spotify</h1>
+      <NavBar/>
+      <Home/>
+      <Footer/>      
     </div>
   );
 }

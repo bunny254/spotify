@@ -6,7 +6,8 @@ const db=require('./db/db');
 const userRoutes=require('./routes/users');
 const authRoutes=require('./routes/auth');
 const songRoutes=require('./routes/songs');
-const playlistRoutes=require('./routes/playlist')
+const playlistRoutes=require('./routes/playlist');
+const searchRoutes=require('./routes/search');
 const app=express()
 const port=3500;
 
@@ -29,6 +30,8 @@ app.get('/', (req, res)=>{
 })
 app.use('/api/auth/users', userRoutes);
 app.use('/api/auth/login', authRoutes);
-app.use('/api/playlists', playlistRoutes);
+app.use('/api/songs',      songRoutes);
+app.use('/api/playlists',  playlistRoutes);
+app.use('/api/search',     searchRoutes);
 
 start()

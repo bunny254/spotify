@@ -1,14 +1,14 @@
+//import NavBar from './components/navBar';
+//import Home from './components/home';
+//import Footer from './components/footer';
+//import SignIn from './components/login';
+import MusicPlayer from './components/musicPlayer';
 import './index.css';
-import NavBar from './components/navBar';
-import Home from './components/home';
-import Footer from './components/footer';
 
 function App() {
   return (
     <div className="App">
-      <NavBar/>
-      <Home/>
-      <Footer/>      
+      <MusicPlayer/>      
     </div>
   );
 }

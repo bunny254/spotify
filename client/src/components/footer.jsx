@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <div>
         <div className='flex flex-row bg-black p-20'>
-            <div className='flex flex-row'>
+            <div className='ml-3 flex flex-row'>
             <SiSpotify className='cursor-pointer'color='white' size='30px'/>
             <h1 className='text-white pl-1 cursor-pointer'>Spotify</h1>
             </div>

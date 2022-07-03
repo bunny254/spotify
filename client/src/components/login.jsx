@@ -1,4 +1,5 @@
-import React, {useState, useContext} from 'react';
+import React, {useState} from 'react';
+import {useNavigate} from 'react-router-dom';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 //import LockIcon from '@mui/icons-material/Lock';
@@ -24,6 +25,10 @@ const validationSchema = yup.object({
 
 const SignIn = (props) => {
   const [error, setError]=useState(null);
+  const [user, setUser]=useState('');
+  const auth=useAuth();
+  const navigate=useNavigate()
+
   const onSubmit= async (values)=>{
     setError(null);
     const res= await axios.post('http://localhost:3500/api/auth/login', values).catch((err)=>{
@@ -43,6 +48,11 @@ const SignIn = (props) => {
   })
 
   const theme = createTheme();
+
+  const handleLogin=()=>{
+    auth.login(user)
+    navigate('/')
+  }
 
   return (
     

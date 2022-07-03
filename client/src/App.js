@@ -1,15 +1,16 @@
-//import NavBar from './components/navBar';
-//import Home from './components/home';
-//import Footer from './components/footer';
-//import SignIn from './components/login';
-//import AddSong from './components/addSong';
-import MusicPlayer from './components/musicPlayer';
+//import LandingPage from './components/landingPage';
+//import MusicPlayer from './components/musicPlayer';
+import AddSong from './components/addSong';
+import { AuthProvider } from './components/auth';
 import './index.css';
+
 
 function App() {
   return (
     <div className="App">
-      <MusicPlayer/>     
+      <AuthProvider>
+      <AddSong/>
+      </AuthProvider>     
     </div>
   );
 }

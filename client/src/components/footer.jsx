@@ -4,12 +4,12 @@ import {SiSpotify} from 'react-icons/si';
 const Footer = () => {
   return (
     <div>
-        <div className='flex flex-row bg-black p-20'>
-            <div className='ml-3 flex flex-row'>
+        <div className='pl-40 flex flex-row bg-black p-20'>
+            <div className='ml-4 flex flex-row'>
             <SiSpotify className='cursor-pointer'color='white' size='30px'/>
             <h1 className='text-white pl-1 cursor-pointer'>Spotify</h1>
             </div>
-            <div className='flex flex-col pl-20 text-white'>
+            <div className='ml-3 flex flex-col pl-20 text-white'>
                 <p className='text-gray-300 mb-5 font-semibold'>COMPANY</p>
                 <a href=''>About</a>
                 <a href=''>Jobs</a>

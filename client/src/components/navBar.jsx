@@ -18,6 +18,10 @@ const NavBar = () => {
         </div>
         <div className='flex flex-3 pr-40'>
           <FiMenu className='flex my-4 cursor-pointer' color='white' size='25px'/>
+          <div className='absolute hidden'>
+            <a className='text-white' href='#'>Log in</a>
+            <a className='text-white' href='#'>Sign up</a>
+          </div>
         </div>
 
         </div>

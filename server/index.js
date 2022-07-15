@@ -10,6 +10,7 @@ const authRoutes=require('./routes/auth');
 const songRoutes=require('./routes/songs');
 const playlistRoutes=require('./routes/playlist');
 const searchRoutes=require('./routes/search');
+const displaySongsRoute=require('./routes/displaySongs');
 const { assert } = require('joi');
 const app=express()
 const port=3500;
@@ -47,6 +48,9 @@ app.use('/api/playlists',  playlistRoutes);
 //Search function
 app.use('/api/search',     searchRoutes);
 
+//Get All Uploaded Songs
+app.use('/songs', displaySongsRoute);
+
 
 //upload storage
 const Storage=multer.diskStorage({
@@ -79,24 +83,8 @@ app.post('/api/upload-song',async(req,res)=>{
             console.log(error);
             
         }
-        /*
-        if(err){
-            console.log(err)
-        }
-        else{
-            const newSong= new uploadSong({
-                name:req.body.name,
-                audio:{
-                    data:req.file.filename,
-                    contentType:'audio/mp3'
-                }
-            })
-            newSong.save()
-            .then(()=>{
-                res.status(201).send("Successfully Uploaded Song!").catch(err=>console.log(err));
-            })
-        } */
-    })
+        
+    }) 
 })
 
 
